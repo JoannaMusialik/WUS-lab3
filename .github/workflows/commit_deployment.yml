@@ -39,6 +39,9 @@ jobs:
   deploy:
     needs: [ push_to_dockerhub ]
     runs-on: ubuntu-20.04
+    env:
+      REPOSITORY_PREFIX: "${{ secrets.DOCKERHUB_USER }}"
+      PATHS: customers-service vets-service visits-service
     steps:
     - uses: actions/checkout@v2
     - uses: google-github-actions/auth@v0.4.0
