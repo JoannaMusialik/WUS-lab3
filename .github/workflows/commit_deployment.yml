@@ -35,7 +35,7 @@ jobs:
       working-directory: ./spring-petclinic-cloud
       run: for path in ${{ env.PATHS }}; do cd "spring-petclinic-${path}" && mvn spring-boot:build-image -Pk8s -DREPOSITORY_PREFIX=${{ env.REPOSITORY_PREFIX }} && cd ..; done
     - name: Push images
-      run: for path in ${{ env.PATHS }}; do docker push "${{ env.REPOSITORY_PREFIX }}/spring-petclinic-cloud-${p}:latest"; done
+      run: for path in ${{ env.PATHS }}; do docker push "${{ env.REPOSITORY_PREFIX }}/spring-petclinic-cloud-${path}:latest"; done
   deploy:
     needs: [ push_to_dockerhub ]
     runs-on: ubuntu-20.04
