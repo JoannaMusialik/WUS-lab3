@@ -50,8 +50,8 @@ jobs:
     - id: 'get-credentials'
       uses: 'google-github-actions/get-gke-credentials@v0'
       with:
-        cluster_name: ${{ secrets.GKE_CLUSTER_NAME }}
-        location: ${{ secrets.GKE_REGION }}
+        cluster_name: lab3
+        location: europe-central2-a
     - name: Deploy images
       working-directory: ./spring-petclinic-cloud
       run: chmod +x scripts/deployToKubernetes.sh && ./scripts/deployToKubernetes.sh
