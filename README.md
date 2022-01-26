@@ -20,6 +20,12 @@ Te zmiany następnie powinny zostać wprowadzone do własnego repozytorium (stag
 Plik konfiguracyjny dla pipeline'a to .github/workflows/commit_deployment.yml
 
 
+## Wygenerowanie service account 
+
+
 ### Ustawienie sekretów
+
+
+
 
 ### Rezultaty
