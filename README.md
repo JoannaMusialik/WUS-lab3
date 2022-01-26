@@ -16,6 +16,11 @@ rm .git
 
 Te zmiany następnie powinny zostać wprowadzone do własnego repozytorium (stage, commit i następnie push).
 
+
+## Wstępne ustawienie środowiska
+
+
+
 ### Konfiguracja pipeline'a
 Plik konfiguracyjny dla pipeline'a to .github/workflows/commit_deployment.yml
 
