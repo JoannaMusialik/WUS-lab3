@@ -32,11 +32,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
     - name: Build images
-    working-directory: ./spring-petclinic-cloud
-    run: for path in ${{ env.PATHS }}; do cd "spring-petclinic-${path}" && mvn spring-boot:build-image -Pk8s -DREPOSITORY_PREFIX=${{ env.REPOSITORY_PREFIX }} && cd ..; done
+      working-directory: ./spring-petclinic-cloud
+      run: for path in ${{ env.PATHS }}; do cd "spring-petclinic-${path}" && mvn spring-boot:build-image -Pk8s -DREPOSITORY_PREFIX=${{ env.REPOSITORY_PREFIX }} && cd ..; done
     - name: Push images
-    run: for path in ${{ env.PATHS }}; do docker push "${{ env.REPOSITORY_PREFIX }}/spring-petclinic-cloud-${p}:${{ env.TAG }}"; done
-  deploy_on_kubernetes:
+      run: for path in ${{ env.PATHS }}; do docker push "${{ env.REPOSITORY_PREFIX }}/spring-petclinic-cloud-${p}:${{ env.TAG }}"; done
+  deploy:
     needs: [ push_to_dockerhub ]
     runs-on: ubuntu-20.04
     steps:
@@ -46,9 +46,9 @@ jobs:
         credentials_json: ${{ secrets.GKE_SA_KEY }}
     - id: 'get-credentials'
       uses: 'google-github-actions/get-gke-credentials@v0'
-        with:
-          cluster_name: ${{ secrets.GKE_CLUSTER }}
-          location: ${{ secrets.GKE_REGION }}
+      with:
+        cluster_name: ${{ secrets.GKE_CLUSTER }}
+        location: ${{ secrets.GKE_REGION }}
     - name: Deploy images
       working-directory: ./spring-petclinic-cloud
       run: chmod +x scripts/deployToKubernetes.sh && ./scripts/deployToKubernetes.sh
