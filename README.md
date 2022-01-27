@@ -98,7 +98,7 @@ Przed wykonaniem tego kroku należy wykonać wszystkie kroku z punktu pierwszego
 Konieczne jest ustawienie poniższych sekretów: 
 - DOCKERHUB_USER - nazwa użytkownika DockerHub
 - DOCKERHUB_PASSWORD - hasło użytkownika DockerHub
-- GKE_SERVICE_ACCOUNT_KEY - klucz do konta serwisowego GKE z odpowiednimi uprawnieniami. 
+- GKE_SERVICE_ACCOUNT_KEY - klucz do konta serwisowego GKE z odpowiednimi uprawnieniami (container.admin, container.clusterViewer). 
 
 
 ### Konfiguracja pipeline'a
