@@ -1,5 +1,31 @@
 # WUS-lab3
 
+## Członkowie zespołu
+- Antonina Lewicka
+- Joanna Musialik
+- Paweł Gosk
+- Robert Żurawski
+
+## Wymagania
+Instalacja poniższych pakietów:
+
+- gcloud
+- kubectl
+- helm
+
+Przed rozpoczęciem (po pierwszej instalacji) należy również dokonać pierwotnej konfiguracji gcloud-a za pomocą komendy:
+
+gcloud init.
+
+
+## Punkt pierwszy
+
+
+## Punkt drugi
+
+
+
+
 ## Punkt trzeci
 ## Ustawienie pipeline'a wdrożeniowego
 
